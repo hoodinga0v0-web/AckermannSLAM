@@ -1,0 +1,271 @@
+schema_version: 1
+
+status:
+  classification: provisional_assumed
+  cad_stop_gate: not_passed
+  production_ready: false
+  note: >-
+    CAD source, export metadata, mass properties, and LiDAR ray datum were not
+    supplied. Values marked here are an executable STL-derived fallback and
+    must be replaced and regenerated before a production or real-vehicle use.
+
+provenance:
+  model: user_directed_controller_compatible_A
+  mesh_export_unit: assumed_1u_equals_1mm
+  cad_axis_convention: inferred_from_named_assembly_parts
+  rotation: assumed_Rz_minus_pi_over_2
+  pivots: provisional_from_binary_stl_geometry
+  rear_symmetry: provisional_right_rear_mirror_design
+  inertials: provisional_primitive_approximations
+  lidar_ray_origin: provisional_at_housing_bbox_center
+
+model: controller_compatible_A
+
+coordinate_system:
+  cad_axis_convention:
+    x: right
+    y: forward
+    z: up
+    status: assumed
+  ros_axis_convention:
+    x: forward
+    y: left
+    z: up
+  R_cad_to_ros:
+    - [0.0, 1.0, 0.0]
+    - [-1.0, 0.0, 0.0]
+    - [0.0, 0.0, 1.0]
+  rotation_status: assumed
+  mesh_export_unit: 0.001
+  mesh_export_unit_name: m_per_raw_unit
+  mesh_export_unit_status: assumed
+  base_pivot_cad_u: [0.0, -161.0, 0.5]
+
+geometry:
+  rolling_wheelbase: 0.171
+  traction_track_width: 0.124
+  steering_track_width: 0.130
+  rear_wheel_radius: 0.025
+  front_wheel_radius: 0.025
+  rear_wheel_width: 0.034
+  front_wheel_width: 0.028
+  rear_axle_height: 0.025
+  front_axle_height: 0.025
+  actual_kingpin_x: 0.144
+  actual_kingpin_track: 0.080
+  left_knuckle_to_wheel_xyz: [0.027, 0.025, 0.0]
+  right_knuckle_to_wheel_xyz: [0.027, -0.025, 0.0]
+  footprint:
+    - [-0.063107, -0.079081]
+    - [0.242886, -0.079081]
+    - [0.242886, 0.079080]
+    - [-0.063107, 0.079080]
+
+lidar:
+  body_xyz: [0.066, 0.00001833868, 0.057]
+  body_rpy: [0.0, 0.0, 0.0]
+  ray_xyz: [0.0, 0.0, 0.0]
+  ray_rpy: [0.0, 0.0, 0.0]
+  ray_origin_status: provisional_assumed_at_housing_bbox_center
+
+visual:
+  use_knuckle_visual: true
+
+collision:
+  chassis:
+    origin_xyz: [0.0855, 0.0, 0.002]
+    size_xyz: [0.176, 0.110, 0.010]
+    provenance: provisional_from_chassis_bbox
+
+limits:
+  front_left_steering:
+    lower: -0.55
+    upper: 0.55
+    velocity: 2.0
+    effort: 30.0
+    status: provisional
+  front_right_steering:
+    lower: -0.55
+    upper: 0.55
+    velocity: 2.0
+    effort: 30.0
+    status: provisional
+  rear_left_wheel:
+    velocity: 30.0
+    acceleration: 20.0
+    effort: 20.0
+    status: provisional
+  rear_right_wheel:
+    velocity: 30.0
+    acceleration: 20.0
+    effort: 20.0
+    status: provisional
+
+control:
+  update_rate: 100
+  command_timeout: 0.5
+  zero_linear_epsilon: 0.0001
+  max_projection_iterations: 12
+  steering_position_gain:
+    maximum_position_error: 1.1
+    safety_factor: 0.8
+    cap: 1.0
+
+inertials:
+  base:
+    mass: 5.0
+    com_xyz: [0.082, 0.0, 0.0198]
+    inertia:
+      ixx: 0.0127227084821
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 0.0413130477021
+      iyz: 0.0
+      izz: 0.0494360908208
+    status: provisional_box_approximation
+  front_left_steering:
+    mass: 0.1
+    com_xyz: [-0.0115097792, -0.0194275451, -0.0014443124]
+    inertia:
+      ixx: 0.00000285208333333
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 0.000009375
+      iyz: 0.0
+      izz: 0.0000116270833333
+    status: provisional_knuckle_box_approximation
+  front_right_steering:
+    mass: 0.1
+    com_xyz: [-0.0115097811, 0.0194275451, -0.0014443124]
+    inertia:
+      ixx: 0.00000285208333333
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 0.000009375
+      iyz: 0.0
+      izz: 0.0000116270833333
+    status: provisional_knuckle_box_approximation
+  front_left_wheel:
+    mass: 0.25
+    com_xyz: [0.0, 0.0019200404, 0.0]
+    inertia:
+      ixx: 0.0000553958333333
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 0.000078125
+      iyz: 0.0
+      izz: 0.0000553958333333
+    status: provisional_cylinder_approximation
+  front_right_wheel:
+    mass: 0.25
+    com_xyz: [0.0, -0.0019200404, 0.0]
+    inertia:
+      ixx: 0.0000553958333333
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 0.000078125
+      iyz: 0.0
+      izz: 0.0000553958333333
+    status: provisional_cylinder_approximation
+  rear_left_wheel:
+    mass: 0.25
+    com_xyz: [0.0, 0.0049082622, 0.0]
+    inertia:
+      ixx: 0.0000631458333333
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 0.000078125
+      iyz: 0.0
+      izz: 0.0000631458333333
+    status: provisional_cylinder_approximation
+  rear_right_wheel:
+    mass: 0.25
+    com_xyz: [0.0, -0.0049082623, 0.0]
+    inertia:
+      ixx: 0.0000631458333333
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 0.000078125
+      iyz: 0.0
+      izz: 0.0000631458333333
+    status: provisional_cylinder_approximation
+
+meshes:
+  - source: chassis.stl
+    target: chassis.stl
+    include: true
+    role: base_visual
+    pivot_cad_u: [0.0, -161.0, 0.5]
+    model_origin_ros_m: [0.0, 0.0, 0.0]
+    expected_triangles: 632
+  - source: exterior.stl
+    target: exterior.stl
+    include: true
+    role: base_visual_only
+    pivot_cad_u: [0.0, -161.0, 0.5]
+    model_origin_ros_m: [0.0, 0.0, 0.0]
+    expected_triangles: 107692
+  - source: LFWheel.stl
+    target: front_left_wheel.stl
+    include: true
+    role: front_left_wheel
+    pivot_cad_u: [-65.0, 10.0, 0.5]
+    model_origin_ros_m: [0.171, 0.065, 0.0]
+    expected_triangles: 1002
+  - source: RFWheel.stl
+    target: front_right_wheel.stl
+    include: true
+    role: front_right_wheel
+    pivot_cad_u: [65.0, 10.0, 0.5]
+    model_origin_ros_m: [0.171, -0.065, 0.0]
+    expected_triangles: 1002
+  - source: LRWheel.stl
+    target: rear_left_wheel.stl
+    include: true
+    role: rear_left_wheel
+    pivot_cad_u: [-61.908706665, -161.196060181, 0.207551003]
+    model_origin_ros_m: [0.0, 0.062, 0.0]
+    correction: provisional_snap_to_symmetric_A_model
+    expected_triangles: 1050
+  - source: RRWheel.stl
+    target: rear_right_wheel.stl
+    include: true
+    role: rear_right_wheel
+    pivot_cad_u: [62.0, -161.0, 0.5]
+    model_origin_ros_m: [0.0, -0.062, 0.0]
+    expected_triangles: 1050
+  - source: LFKnuckle.stl
+    target: front_left_knuckle.stl
+    include: true
+    role: optional_virtual_axis_visual
+    pivot_cad_u: [-65.0, 10.0, 0.5]
+    model_origin_ros_m: [0.171, 0.065, 0.0]
+    expected_triangles: 380
+  - source: RFKnuckle.stl
+    target: front_right_knuckle.stl
+    include: true
+    role: optional_virtual_axis_visual
+    pivot_cad_u: [65.0, 10.0, 0.5]
+    model_origin_ros_m: [0.171, -0.065, 0.0]
+    expected_triangles: 380
+  - source: LiDER.stl
+    target: lidar_body.stl
+    include: true
+    role: lidar_housing_visual
+    pivot_cad_u: [-0.01833868, -95.0, 57.5]
+    model_origin_ros_m: [0.066, 0.00001833868, 0.057]
+    expected_triangles: 828
+  - source: KnuckleLink.stl
+    target: null
+    include: false
+    role: excluded_tie_rod_closed_loop
+    pivot_cad_u: [0.0, 10.0, 1.25]
+    model_origin_ros_m: null
+    expected_triangles: 300
+
+validation:
+  expected_input_meshes: 10
+  expected_output_meshes: 9
+  assembly_tolerance_m: 0.0005
+  reconstruction_tolerance_u: 0.00005
+  normal_alignment_minimum: 0.999

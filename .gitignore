@@ -1,0 +1,25 @@
+# Codex and local test state
+/.agents/
+/.codex/
+/.pytest_cache/
+/log/
+
+# Workspace-generated artifacts
+/ackermann_ws/build/
+/ackermann_ws/install/
+/ackermann_ws/log/
+/ackermann_ws/.tmp/
+**/__pycache__/
+*.py[cod]
+
+# Host-specific extracted ROS overlay; keep its inventory and marker
+/ackermann_ws/local_ros/*
+!/ackermann_ws/local_ros/README.md
+!/ackermann_ws/local_ros/COLCON_IGNORE
+
+# Runtime recordings and local secrets
+*.db3
+*.mcap
+*.tmp
+.env
+.env.*

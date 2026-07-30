@@ -1,0 +1,844 @@
+{
+  "R_cad_to_ros": [
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "base_pivot_cad_u": [
+    0.0,
+    -161.0,
+    0.5
+  ],
+  "canonical_geometry": "/home/hoodinga/Documents/SLAM/ackermann_ws/src/ackermann_car_description/config/vehicle_geometry.yaml",
+  "canonical_geometry_sha256": "aade8f6eb75a2f3d6a22fa6101d470c46d629b11153f07f875301b06a8dd9e18",
+  "expected_input_count": 10,
+  "expected_output_count": 9,
+  "generator": "ackermann_car_description/normalize_meshes.py:v1",
+  "mesh_export_unit_m_per_u": 0.001,
+  "output_directory": "/home/hoodinga/Documents/SLAM/ackermann_ws/src/ackermann_car_description/meshes",
+  "output_meshes": [
+    {
+      "inferred_origin_ros_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_round_trip_error_u": 7.62939453125e-06,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot_cad_u": [
+        0.0,
+        -161.0,
+        0.5
+      ],
+      "role": "base_visual",
+      "source": "chassis.stl",
+      "source_sha256": "efa35eafd1ae334e638be9b5b157119e649efb345d138034e0196d7b202e1726",
+      "target": "chassis.stl",
+      "target_sha256": "26f4787bec8925e71166ceddf4d7f35d4b1023ad1bf4ebd004bd2052bbbc1552",
+      "topology": {
+        "bbox_max_u": [
+          173.5,
+          55.0,
+          7.0
+        ],
+        "bbox_min_u": [
+          -2.5,
+          -55.0,
+          -3.0
+        ],
+        "bbox_size_u": [
+          176.0,
+          110.0,
+          10.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999849,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 30077.2071338,
+        "surface_area_u2": 15724.3585243,
+        "triangles": 632,
+        "unique_vertices": 314
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_round_trip_error_u": 7.688768146799611e-06,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot_cad_u": [
+        0.0,
+        -161.0,
+        0.5
+      ],
+      "role": "base_visual_only",
+      "source": "exterior.stl",
+      "source_sha256": "812fb1fb820fdf44ab61271be0727f3c927d11e4422fd8e3e5f60e6f9a9a2e51",
+      "target": "exterior.stl",
+      "target_sha256": "5b1be33ae50d6ae9352886f7f75e8f40bab1e303bb191207b6d7ca1936907793",
+      "topology": {
+        "bbox_max_u": [
+          242.885726929,
+          79.0797042847,
+          50.9029159546
+        ],
+        "bbox_min_u": [
+          -63.1073150635,
+          -79.0809326172,
+          -23.3906173706
+        ],
+        "bbox_size_u": [
+          305.993041992,
+          158.160636902,
+          74.2935333252
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999968505,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 191571.976387,
+        "surface_area_u2": 146152.302464,
+        "triangles": 107692,
+        "unique_vertices": 53848
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        0.171,
+        0.065,
+        0.0
+      ],
+      "maximum_round_trip_error_u": 9.5367431640625e-07,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.171,
+        0.065,
+        0.0
+      ],
+      "pivot_cad_u": [
+        -65.0,
+        10.0,
+        0.5
+      ],
+      "role": "optional_virtual_axis_visual",
+      "source": "LFKnuckle.stl",
+      "source_sha256": "91d64cc2cb196c27c833b673c3ccf91ac5d4eea00f786251cdae60ee5e3ab5b1",
+      "target": "front_left_knuckle.stl",
+      "target_sha256": "63f046307a9efa985045e7eabd957289a619c22d9091bef6796ac6ee0fce94bb",
+      "topology": {
+        "bbox_max_u": [
+          3.0,
+          -10.0,
+          3.0
+        ],
+        "bbox_min_u": [
+          -30.0,
+          -27.5,
+          -3.0
+        ],
+        "bbox_size_u": [
+          33.0,
+          17.5,
+          6.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999996,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 614.745142129,
+        "surface_area_u2": 777.326589338,
+        "triangles": 380,
+        "unique_vertices": 190
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        0.171,
+        0.065,
+        0.0
+      ],
+      "maximum_round_trip_error_u": 9.5367431640625e-07,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.171,
+        0.065,
+        0.0
+      ],
+      "pivot_cad_u": [
+        -65.0,
+        10.0,
+        0.5
+      ],
+      "role": "front_left_wheel",
+      "source": "LFWheel.stl",
+      "source_sha256": "1b0e1cfd71cfd7dea314106d99b7b7cbb0613e56c29e618034753df24282a9af",
+      "target": "front_left_wheel.stl",
+      "target_sha256": "8055728513aab9027636eb15192443d2594596ce45f915c198966604d919685b",
+      "topology": {
+        "bbox_max_u": [
+          25.0,
+          14.0,
+          24.9633350372
+        ],
+        "bbox_min_u": [
+          -25.0,
+          -14.0,
+          -24.9633350372
+        ],
+        "bbox_size_u": [
+          50.0,
+          28.0,
+          49.9266700745
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999998,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46744.6535277,
+        "surface_area_u2": 7510.3076911,
+        "triangles": 1002,
+        "unique_vertices": 503
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        0.171,
+        -0.065,
+        0.0
+      ],
+      "maximum_round_trip_error_u": 9.5367431640625e-07,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.171,
+        -0.065,
+        0.0
+      ],
+      "pivot_cad_u": [
+        65.0,
+        10.0,
+        0.5
+      ],
+      "role": "optional_virtual_axis_visual",
+      "source": "RFKnuckle.stl",
+      "source_sha256": "c122e8a51787d7c3d7c97b8d8ba9d277db03383cd4472c57171acf6b237d674a",
+      "target": "front_right_knuckle.stl",
+      "target_sha256": "44d1eb31ba88bc194ec1c775457224a59b60e44775184a64a621aab40523ee63",
+      "topology": {
+        "bbox_max_u": [
+          3.0,
+          27.5,
+          3.0
+        ],
+        "bbox_min_u": [
+          -30.0,
+          10.0,
+          -3.0
+        ],
+        "bbox_size_u": [
+          33.0,
+          17.5,
+          6.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999996,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 614.7451421,
+        "surface_area_u2": 777.326589347,
+        "triangles": 380,
+        "unique_vertices": 190
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        0.171,
+        -0.065,
+        0.0
+      ],
+      "maximum_round_trip_error_u": 9.537907246235167e-07,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.171,
+        -0.065,
+        0.0
+      ],
+      "pivot_cad_u": [
+        65.0,
+        10.0,
+        0.5
+      ],
+      "role": "front_right_wheel",
+      "source": "RFWheel.stl",
+      "source_sha256": "cfd31897bcc131ed7c77e20cd20056632ff46c244e65f7e5b2d78f31a521e479",
+      "target": "front_right_wheel.stl",
+      "target_sha256": "1a205dac44c36f3838107b0704b1252023034e6c95015f5ce48657f6b80479a8",
+      "topology": {
+        "bbox_max_u": [
+          25.0,
+          14.0,
+          24.9633350372
+        ],
+        "bbox_min_u": [
+          -25.0,
+          -14.0,
+          -24.9633350372
+        ],
+        "bbox_size_u": [
+          50.0,
+          28.0,
+          49.9266700745
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999998,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46744.6535308,
+        "surface_area_u2": 7510.30769223,
+        "triangles": 1002,
+        "unique_vertices": 503
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        0.066,
+        1.833868e-05,
+        0.057
+      ],
+      "maximum_round_trip_error_u": 4.765698236042226e-07,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.066,
+        1.833868e-05,
+        0.057
+      ],
+      "pivot_cad_u": [
+        -0.01833868,
+        -95.0,
+        57.5
+      ],
+      "role": "lidar_housing_visual",
+      "source": "LiDER.stl",
+      "source_sha256": "2444df99f55d039bb23e1225c824834fe5e0644d4e9fcd7bd7e3cc92b97fa883",
+      "target": "lidar_body.stl",
+      "target_sha256": "2f211272dcfe89a1a2d1e6da8e8cf996bb6c2e692156cbf834604724e5019b26",
+      "topology": {
+        "bbox_max_u": [
+          12.4908294678,
+          12.4816617966,
+          7.5
+        ],
+        "bbox_min_u": [
+          -12.4908294678,
+          -12.4816608429,
+          -7.5
+        ],
+        "bbox_size_u": [
+          24.9816589355,
+          24.9633226395,
+          15.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 1.0,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 4513.92869004,
+        "surface_area_u2": 1682.01923697,
+        "triangles": 828,
+        "unique_vertices": 416
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        -0.0001960601810000071,
+        0.061908706665,
+        -0.000292448997
+      ],
+      "maximum_round_trip_error_u": 9.531768188574683e-07,
+      "model_origin_correction_m": [
+        0.0001960601810000071,
+        9.12933349999992e-05,
+        0.000292448997
+      ],
+      "model_origin_correction_norm_m": 0.0003637313341403014,
+      "model_origin_ros_m": [
+        0.0,
+        0.062,
+        0.0
+      ],
+      "pivot_cad_u": [
+        -61.908706665,
+        -161.196060181,
+        0.207551003
+      ],
+      "role": "rear_left_wheel",
+      "source": "LRWheel.stl",
+      "source_sha256": "0d1228fe39c0db52f117db1c68528dc0be1d7f93fc03a54db214732840b79c3a",
+      "target": "rear_left_wheel.stl",
+      "target_sha256": "24e7057d503990e33f8ba5c7e0793b10bc9d78bc392ff8d2f7034e3cfcc10a07",
+      "topology": {
+        "bbox_max_u": [
+          25.0,
+          17.0,
+          24.9633350372
+        ],
+        "bbox_min_u": [
+          -25.0,
+          -17.0,
+          -24.9633369446
+        ],
+        "bbox_size_u": [
+          50.0,
+          34.0,
+          49.9266719818
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 1.0,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46773.7730215,
+        "surface_area_u2": 7557.29717407,
+        "triangles": 1050,
+        "unique_vertices": 527
+      }
+    },
+    {
+      "inferred_origin_ros_m": [
+        0.0,
+        -0.062,
+        0.0
+      ],
+      "maximum_round_trip_error_u": 9.5367431640625e-07,
+      "model_origin_correction_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_origin_correction_norm_m": 0.0,
+      "model_origin_ros_m": [
+        0.0,
+        -0.062,
+        0.0
+      ],
+      "pivot_cad_u": [
+        62.0,
+        -161.0,
+        0.5
+      ],
+      "role": "rear_right_wheel",
+      "source": "RRWheel.stl",
+      "source_sha256": "8ed1421b6f13c9ff33f22fa50a32dca768e7374586a0122da528334a90120a0a",
+      "target": "rear_right_wheel.stl",
+      "target_sha256": "5858ee4d80344bacab07874e92c4caf8b97e26769d9dcb6c04365fb3d8dfd2bf",
+      "topology": {
+        "bbox_max_u": [
+          25.0,
+          17.0,
+          24.9633350372
+        ],
+        "bbox_min_u": [
+          -25.0,
+          -17.0,
+          -24.9633350372
+        ],
+        "bbox_size_u": [
+          50.0,
+          34.0,
+          49.9266700745
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 1.0,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46773.7706758,
+        "surface_area_u2": 7557.29687921,
+        "triangles": 1050,
+        "unique_vertices": 527
+      }
+    }
+  ],
+  "production_ready": false,
+  "schema_version": 1,
+  "source_directory": "/home/hoodinga/Documents/SLAM/slam_files",
+  "source_meshes": {
+    "KnuckleLink.stl": {
+      "included": false,
+      "sha256": "721bbcc958aef3f9691402a574f62df47016a95e5cc58f0684b9510b10a34c4a",
+      "topology": {
+        "bbox_max_u": [
+          50.0,
+          12.5,
+          2.5
+        ],
+        "bbox_min_u": [
+          -50.0,
+          7.5,
+          0.0
+        ],
+        "bbox_size_u": [
+          100.0,
+          5.0,
+          2.5
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999977,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 1211.76427001,
+        "surface_area_u2": 1522.72712273,
+        "triangles": 300,
+        "unique_vertices": 148
+      },
+      "triangles": 300
+    },
+    "LFKnuckle.stl": {
+      "included": true,
+      "sha256": "91d64cc2cb196c27c833b673c3ccf91ac5d4eea00f786251cdae60ee5e3ab5b1",
+      "topology": {
+        "bbox_max_u": [
+          -37.5,
+          13.0,
+          3.5
+        ],
+        "bbox_min_u": [
+          -55.0,
+          -20.0,
+          -2.5
+        ],
+        "bbox_size_u": [
+          17.5,
+          33.0,
+          6.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999938,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 614.745143575,
+        "surface_area_u2": 777.326590774,
+        "triangles": 380,
+        "unique_vertices": 190
+      },
+      "triangles": 380
+    },
+    "LFWheel.stl": {
+      "included": true,
+      "sha256": "1b0e1cfd71cfd7dea314106d99b7b7cbb0613e56c29e618034753df24282a9af",
+      "topology": {
+        "bbox_max_u": [
+          -51.0,
+          35.0,
+          25.4633350372
+        ],
+        "bbox_min_u": [
+          -79.0,
+          -15.0,
+          -24.4633350372
+        ],
+        "bbox_size_u": [
+          28.0,
+          50.0,
+          49.9266700745
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.99999999998,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46744.6535233,
+        "surface_area_u2": 7510.30769015,
+        "triangles": 1002,
+        "unique_vertices": 503
+      },
+      "triangles": 1002
+    },
+    "LRWheel.stl": {
+      "included": true,
+      "sha256": "0d1228fe39c0db52f117db1c68528dc0be1d7f93fc03a54db214732840b79c3a",
+      "topology": {
+        "bbox_max_u": [
+          -44.908706665,
+          -136.196060181,
+          25.1708869934
+        ],
+        "bbox_min_u": [
+          -78.908706665,
+          -186.196060181,
+          -24.7557849884
+        ],
+        "bbox_size_u": [
+          34.0,
+          50.0,
+          49.9266719818
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999863,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46773.773024,
+        "surface_area_u2": 7557.29717497,
+        "triangles": 1050,
+        "unique_vertices": 527
+      },
+      "triangles": 1050
+    },
+    "LiDER.stl": {
+      "included": true,
+      "sha256": "2444df99f55d039bb23e1225c824834fe5e0644d4e9fcd7bd7e3cc92b97fa883",
+      "topology": {
+        "bbox_max_u": [
+          12.4633226395,
+          -82.5091705322,
+          65.0
+        ],
+        "bbox_min_u": [
+          -12.5,
+          -107.490829468,
+          50.0
+        ],
+        "bbox_size_u": [
+          24.9633226395,
+          24.9816589355,
+          15.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999985,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 4513.92869145,
+        "surface_area_u2": 1682.01923871,
+        "triangles": 828,
+        "unique_vertices": 416
+      },
+      "triangles": 828
+    },
+    "RFKnuckle.stl": {
+      "included": true,
+      "sha256": "c122e8a51787d7c3d7c97b8d8ba9d277db03383cd4472c57171acf6b237d674a",
+      "topology": {
+        "bbox_max_u": [
+          55.0,
+          13.0,
+          3.5
+        ],
+        "bbox_min_u": [
+          37.5,
+          -20.0,
+          -2.5
+        ],
+        "bbox_size_u": [
+          17.5,
+          33.0,
+          6.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999938,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 614.745143545,
+        "surface_area_u2": 777.326590783,
+        "triangles": 380,
+        "unique_vertices": 190
+      },
+      "triangles": 380
+    },
+    "RFWheel.stl": {
+      "included": true,
+      "sha256": "cfd31897bcc131ed7c77e20cd20056632ff46c244e65f7e5b2d78f31a521e479",
+      "topology": {
+        "bbox_max_u": [
+          79.0,
+          35.0,
+          25.4633350372
+        ],
+        "bbox_min_u": [
+          51.0,
+          -15.0,
+          -24.4633350372
+        ],
+        "bbox_size_u": [
+          28.0,
+          50.0,
+          49.9266700745
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.99999999998,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46744.6535256,
+        "surface_area_u2": 7510.30769103,
+        "triangles": 1002,
+        "unique_vertices": 503
+      },
+      "triangles": 1002
+    },
+    "RRWheel.stl": {
+      "included": true,
+      "sha256": "8ed1421b6f13c9ff33f22fa50a32dca768e7374586a0122da528334a90120a0a",
+      "topology": {
+        "bbox_max_u": [
+          79.0,
+          -136.0,
+          25.4633350372
+        ],
+        "bbox_min_u": [
+          45.0,
+          -186.0,
+          -24.4633350372
+        ],
+        "bbox_size_u": [
+          34.0,
+          50.0,
+          49.9266700745
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999338,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 46773.7706751,
+        "surface_area_u2": 7557.29687897,
+        "triangles": 1050,
+        "unique_vertices": 527
+      },
+      "triangles": 1050
+    },
+    "chassis.stl": {
+      "included": true,
+      "sha256": "efa35eafd1ae334e638be9b5b157119e649efb345d138034e0196d7b202e1726",
+      "topology": {
+        "bbox_max_u": [
+          55.0,
+          12.5,
+          7.5
+        ],
+        "bbox_min_u": [
+          -55.0,
+          -163.5,
+          -2.5
+        ],
+        "bbox_size_u": [
+          110.0,
+          176.0,
+          10.0
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.999999999338,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 30077.2071748,
+        "surface_area_u2": 15724.3585455,
+        "triangles": 632,
+        "unique_vertices": 314
+      },
+      "triangles": 632
+    },
+    "exterior.stl": {
+      "included": true,
+      "sha256": "812fb1fb820fdf44ab61271be0727f3c927d11e4422fd8e3e5f60e6f9a9a2e51",
+      "topology": {
+        "bbox_max_u": [
+          79.0809326172,
+          81.8857269287,
+          51.4029159546
+        ],
+        "bbox_min_u": [
+          -79.0797042847,
+          -224.107315063,
+          -22.8906173706
+        ],
+        "bbox_size_u": [
+          158.160636902,
+          305.993041992,
+          74.2935333252
+        ],
+        "boundary_edges": 0,
+        "degenerate_triangles": 0,
+        "minimum_normal_alignment": 0.99999976016,
+        "nonmanifold_edges": 0,
+        "shells": 1,
+        "signed_volume_u3": 191571.975574,
+        "surface_area_u2": 146152.302203,
+        "triangles": 107692,
+        "unique_vertices": 53848
+      },
+      "triangles": 107692
+    }
+  },
+  "status": "provisional_assumed"
+}

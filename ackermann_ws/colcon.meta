@@ -1,0 +1,19 @@
+{
+  "names": {
+    "ackermann_steering_controller": {
+      "cmake-args": [
+        "-DBUILD_TESTING=OFF"
+      ]
+    },
+    "gz_ros2_control": {
+      "cmake-args": [
+        "-DBUILD_TESTING=OFF"
+      ]
+    },
+    "steering_controllers_library": {
+      "cmake-args": [
+        "-DBUILD_TESTING=OFF"
+      ]
+    }
+  }
+}

@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<robot name="ackermann_car" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="controllers_file" default=""/>
+  <xacro:arg name="mesh_prefix" default=""/>
+
+  <xacro:include filename="vehicle_geometry.generated.xacro"/>
+  <xacro:include filename="inertial_macros.xacro"/>
+  <xacro:include filename="lidar.xacro"/>
+  <xacro:include filename="ros2_control.xacro"/>
+
+  <xacro:property name="mesh_root" value="$(arg mesh_prefix)"/>
+  <xacro:property name="front_axle_z_from_base" value="${front_axle_height - rear_axle_height}"/>
+
+  <material name="body_gray">
+    <color rgba="0.35 0.38 0.42 1.0"/>
+  </material>
+  <material name="body_blue">
+    <color rgba="0.05 0.20 0.55 1.0"/>
+  </material>
+  <material name="tire_black">
+    <color rgba="0.025 0.025 0.025 1.0"/>
+  </material>
+  <material name="knuckle_metal">
+    <color rgba="0.45 0.45 0.48 1.0"/>
+  </material>
+
+  <xacro:macro
+    name="wheel_link"
+    params="name mesh_file radius width mass com_xyz ixx ixy ixz iyy iyz izz">
+    <link name="${name}">
+      <xacro:inertial_from_tensor
+        mass="${mass}" xyz="${com_xyz}"
+        ixx="${ixx}" ixy="${ixy}" ixz="${ixz}"
+        iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+      <visual>
+        <geometry>
+          <mesh
+            filename="${mesh_root}/${mesh_file}"
+            scale="${mesh_scale}"/>
+        </geometry>
+        <material name="tire_black"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.5707963267948966 0 0"/>
+        <geometry>
+          <cylinder radius="${radius}" length="${width}"/>
+        </geometry>
+      </collision>
+    </link>
+    <gazebo reference="${name}">
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <kp>1000000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>0.1</maxVel>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro
+    name="steering_link"
+    params="name mesh_file mass com_xyz ixx ixy ixz iyy iyz izz">
+    <link name="${name}">
+      <xacro:inertial_from_tensor
+        mass="${mass}" xyz="${com_xyz}"
+        ixx="${ixx}" ixy="${ixy}" ixz="${ixz}"
+        iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+      <xacro:if value="${use_knuckle_visual}">
+        <visual>
+          <geometry>
+            <mesh
+              filename="${mesh_root}/${mesh_file}"
+              scale="${mesh_scale}"/>
+          </geometry>
+          <material name="knuckle_metal"/>
+        </visual>
+      </xacro:if>
+    </link>
+  </xacro:macro>
+
+  <link name="base_footprint"/>
+
+  <link name="base_link">
+    <xacro:inertial_from_tensor
+      mass="${base_mass}" xyz="${base_com_xyz}"
+      ixx="${base_ixx}" ixy="${base_ixy}" ixz="${base_ixz}"
+      iyy="${base_iyy}" iyz="${base_iyz}" izz="${base_izz}"/>
+    <visual name="chassis_visual">
+      <geometry>
+        <mesh
+          filename="${mesh_root}/${chassis_mesh_file}"
+          scale="${mesh_scale}"/>
+      </geometry>
+      <material name="body_gray"/>
+    </visual>
+    <visual name="exterior_visual">
+      <geometry>
+        <mesh
+          filename="${mesh_root}/${exterior_mesh_file}"
+          scale="${mesh_scale}"/>
+      </geometry>
+      <material name="body_blue"/>
+    </visual>
+    <collision name="chassis_collision">
+      <origin xyz="${chassis_collision_origin_xyz}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${chassis_collision_size_xyz}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 ${rear_axle_height}" rpy="0 0 0"/>
+  </joint>
+
+  <xacro:wheel_link
+    name="rear_left_wheel_link"
+    mesh_file="${rear_left_wheel_mesh_file}"
+    radius="${rear_wheel_radius}" width="${rear_wheel_width}"
+    mass="${rear_left_wheel_mass}" com_xyz="${rear_left_wheel_com_xyz}"
+    ixx="${rear_left_wheel_ixx}" ixy="${rear_left_wheel_ixy}" ixz="${rear_left_wheel_ixz}"
+    iyy="${rear_left_wheel_iyy}" iyz="${rear_left_wheel_iyz}" izz="${rear_left_wheel_izz}"/>
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_left_wheel_link"/>
+    <origin xyz="0 ${traction_track_width / 2.0} 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="${rear_left_wheel_effort}" velocity="${rear_left_wheel_velocity}"/>
+    <dynamics damping="0.01" friction="0.0"/>
+  </joint>
+
+  <xacro:wheel_link
+    name="rear_right_wheel_link"
+    mesh_file="${rear_right_wheel_mesh_file}"
+    radius="${rear_wheel_radius}" width="${rear_wheel_width}"
+    mass="${rear_right_wheel_mass}" com_xyz="${rear_right_wheel_com_xyz}"
+    ixx="${rear_right_wheel_ixx}" ixy="${rear_right_wheel_ixy}" ixz="${rear_right_wheel_ixz}"
+    iyy="${rear_right_wheel_iyy}" iyz="${rear_right_wheel_iyz}" izz="${rear_right_wheel_izz}"/>
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_right_wheel_link"/>
+    <origin xyz="0 ${-traction_track_width / 2.0} 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="${rear_right_wheel_effort}" velocity="${rear_right_wheel_velocity}"/>
+    <dynamics damping="0.01" friction="0.0"/>
+  </joint>
+
+  <xacro:steering_link
+    name="front_left_steering_link"
+    mesh_file="${front_left_knuckle_mesh_file}"
+    mass="${front_left_steering_mass}" com_xyz="${front_left_steering_com_xyz}"
+    ixx="${front_left_steering_ixx}" ixy="${front_left_steering_ixy}" ixz="${front_left_steering_ixz}"
+    iyy="${front_left_steering_iyy}" iyz="${front_left_steering_iyz}" izz="${front_left_steering_izz}"/>
+  <joint name="front_left_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_left_steering_link"/>
+    <origin
+      xyz="${rolling_wheelbase} ${steering_track_width / 2.0} ${front_axle_z_from_base}"
+      rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit
+      lower="${front_left_steering_lower}"
+      upper="${front_left_steering_upper}"
+      effort="${front_left_steering_effort}"
+      velocity="${front_left_steering_velocity}"/>
+    <dynamics damping="0.1" friction="0.0"/>
+  </joint>
+
+  <xacro:wheel_link
+    name="front_left_wheel_link"
+    mesh_file="${front_left_wheel_mesh_file}"
+    radius="${front_wheel_radius}" width="${front_wheel_width}"
+    mass="${front_left_wheel_mass}" com_xyz="${front_left_wheel_com_xyz}"
+    ixx="${front_left_wheel_ixx}" ixy="${front_left_wheel_ixy}" ixz="${front_left_wheel_ixz}"
+    iyy="${front_left_wheel_iyy}" iyz="${front_left_wheel_iyz}" izz="${front_left_wheel_izz}"/>
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="front_left_steering_link"/>
+    <child link="front_left_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.01" friction="0.0"/>
+  </joint>
+
+  <xacro:steering_link
+    name="front_right_steering_link"
+    mesh_file="${front_right_knuckle_mesh_file}"
+    mass="${front_right_steering_mass}" com_xyz="${front_right_steering_com_xyz}"
+    ixx="${front_right_steering_ixx}" ixy="${front_right_steering_ixy}" ixz="${front_right_steering_ixz}"
+    iyy="${front_right_steering_iyy}" iyz="${front_right_steering_iyz}" izz="${front_right_steering_izz}"/>
+  <joint name="front_right_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_right_steering_link"/>
+    <origin
+      xyz="${rolling_wheelbase} ${-steering_track_width / 2.0} ${front_axle_z_from_base}"
+      rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit
+      lower="${front_right_steering_lower}"
+      upper="${front_right_steering_upper}"
+      effort="${front_right_steering_effort}"
+      velocity="${front_right_steering_velocity}"/>
+    <dynamics damping="0.1" friction="0.0"/>
+  </joint>
+
+  <xacro:wheel_link
+    name="front_right_wheel_link"
+    mesh_file="${front_right_wheel_mesh_file}"
+    radius="${front_wheel_radius}" width="${front_wheel_width}"
+    mass="${front_right_wheel_mass}" com_xyz="${front_right_wheel_com_xyz}"
+    ixx="${front_right_wheel_ixx}" ixy="${front_right_wheel_ixy}" ixz="${front_right_wheel_ixz}"
+    iyy="${front_right_wheel_iyy}" iyz="${front_right_wheel_iyz}" izz="${front_right_wheel_izz}"/>
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="front_right_steering_link"/>
+    <child link="front_right_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.01" friction="0.0"/>
+  </joint>
+
+  <xacro:ackermann_lidar mesh_prefix="${mesh_root}"/>
+  <xacro:ackermann_ros2_control controllers_file="$(arg controllers_file)"/>
+</robot>
