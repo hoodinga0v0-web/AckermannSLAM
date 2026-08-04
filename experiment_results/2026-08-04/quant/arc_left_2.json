@@ -1,0 +1,45 @@
+{
+  "angular_input_radps": 0.2,
+  "cmd_linear_integral_m": 0.7898438791802948,
+  "cmd_reference_radius_m": 0.5,
+  "cmd_steady_mean": {
+    "angular_radps": 0.2,
+    "linear_mps": 0.1
+  },
+  "cmd_yaw_integral_rad": 1.574430980962989,
+  "command_end_sim_s": 11.234,
+  "command_start_sim_s": 3.234,
+  "duration_sim_s": 8.0,
+  "gt_circle_fit": {
+    "center_x_m": 0.06137331970696143,
+    "center_y_m": 0.5245027042547545,
+    "radius_m": 0.5218153773296063,
+    "residual_rms_m": 0.0006248972276055036,
+    "samples": 934
+  },
+  "gt_distance_m": 0.7060688786597276,
+  "gt_lateral_m": 0.41646672416378877,
+  "gt_longitudinal_m": 0.570165527786526,
+  "kind": "arc_left",
+  "linear_input_mps": 0.1,
+  "odom_circle_fit": {
+    "center_x_m": 0.06290110984995947,
+    "center_y_m": 0.5083873001554979,
+    "radius_m": 0.5057368241760716,
+    "residual_rms_m": 0.00033772105953299396,
+    "samples": 715
+  },
+  "odom_distance_m": 0.7155778006333673,
+  "odom_gt_abs_error_m": 0.009508921973639728,
+  "odom_gt_rel_error_pct": 1.3467414102275308,
+  "sample_counts": {
+    "cmd_vel": 1223,
+    "ground_truth": 1581,
+    "joint_states": 1222,
+    "odom": 1101
+  },
+  "steering_mean_rad": {
+    "front_left": 0.3606324607047366,
+    "front_right": 0.2830901161541232
+  }
+}
