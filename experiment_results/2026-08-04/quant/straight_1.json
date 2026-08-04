@@ -1,0 +1,26 @@
+{
+  "angular_input_radps": 0.0,
+  "cmd_linear_integral_m": 0.9610500000000002,
+  "cmd_yaw_integral_rad": 0.0,
+  "command_end_sim_s": 8.988,
+  "command_start_sim_s": 3.9880000000000004,
+  "duration_sim_s": 5.0,
+  "gt_distance_m": 0.9647264331266275,
+  "gt_lateral_m": 7.660927111039982e-16,
+  "gt_longitudinal_m": 0.9647264331266275,
+  "kind": "straight",
+  "linear_input_mps": 0.2,
+  "odom_distance_m": 0.9609999997857129,
+  "odom_gt_abs_error_m": 0.0037264333409146033,
+  "odom_gt_rel_error_pct": 0.3862683982688677,
+  "sample_counts": {
+    "cmd_vel": 802,
+    "ground_truth": 474,
+    "joint_states": 802,
+    "odom": 802
+  },
+  "steering_mean_rad": {
+    "front_left": -2.816958177843137e-12,
+    "front_right": 2.8169591274066283e-12
+  }
+}

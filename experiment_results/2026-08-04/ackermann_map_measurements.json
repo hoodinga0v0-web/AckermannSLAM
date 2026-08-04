@@ -1,0 +1,45 @@
+{
+  "detected_lines": {
+    "east_inner_x_m": 5.879000000000001,
+    "north_inner_y_m": 5.877000000000001,
+    "south_inner_y_m": -4.873,
+    "west_inner_x_m": -5.8709999999999996
+  },
+  "height_cells": 217,
+  "map": "/home/hoodinga/Documents/SLAM/maps/ackermann_eval_20260804",
+  "mean_abs_error_m": 0.03871017828488051,
+  "mean_rel_error_pct": 0.4235840434014016,
+  "metrics": [
+    {
+      "abs_error_m": 0.05000000000000071,
+      "map_m": 11.75,
+      "name": "west_east_inner_face_gap",
+      "occupied_cells_used": 220,
+      "rel_error_pct": 0.423728813559328,
+      "world_m": 11.8
+    },
+    {
+      "abs_error_m": 0.05000000000000071,
+      "map_m": 10.75,
+      "name": "south_north_inner_face_gap",
+      "occupied_cells_used": 108,
+      "rel_error_pct": 0.4629629629629695,
+      "world_m": 10.8
+    },
+    {
+      "abs_error_m": 0.01613053485464011,
+      "map_m": 4.18386946514536,
+      "name": "inner_long_wall_face_length",
+      "occupied_cells_used": 113,
+      "rel_error_pct": 0.3840603536819074,
+      "world_m": 4.2
+    }
+  ],
+  "origin": [
+    -5.946,
+    -4.948,
+    0.0
+  ],
+  "resolution_m_per_cell": 0.05,
+  "width_cells": 237
+}
